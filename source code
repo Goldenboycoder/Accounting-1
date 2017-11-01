@@ -1,1 +1,156 @@
+#include "stdafx.h"
+#include <iostream>
+#include <string>
+
+int assetscash()
+{
+	std::cout << "Enter Total amount of Cash(in $ only integer values) :		" ;
+	int a;
+	std::cin >> a;
+	return a;
+}
+int assetsaccountsreceivable()
+{
+	std::cout << "Enter Total amount for Accounts recievable :			";
+	int b;
+	std::cin >> b;
+	return b;
+}
+int assetssupplies()
+{
+	std::cout << "Enter Total amount for Supplies :				";
+	int c;
+	std::cin >> c;
+	return c;
+}
+int assetsequipment()
+{
+	std::cout << "Enter Total amount of Equiment value :				";
+	int d;
+	std::cin >> d;
+	return d;
+}
+int liabilitiesnotepayable()
+{
+	std::cout << "Enter Total amount of Note payable :					";
+	int e;
+	std::cin >> e;
+	return e;
+}
+int liabilitiesaccountspayable()
+{
+	std::cout << "Enter Total amount of Accounts payable :				";
+	int f;
+	std::cin >> f;
+	return f;
+}
+int ownerequityownercapital()
+{
+	int t;
+	std::cout << "Enter Total amount for Owner's capital at the first of the month :					";
+	std::cin >> t;
+	int u;
+	std::cout << "Enter Total amount for Investments Added throughout the month :					";
+	std::cin >> u;
+	int g=t+u;
+	return g;
+}
+int ownerequityownerdrawings()
+{
+	std::cout << "Enter Total amount for Owner's Drawings :							";
+	int h;
+	std::cin >> h;
+	return h;
+}
+int ownerequityrevenues()
+{
+	std::cout << "Enter Total amount of Revenues : ";
+	int i;
+	std::cin >> i;
+	return i;
+}
+int ownerequityexpenses()
+{
+	std::cout << "Enter Total amount of Expenses : "<<std::endl;
+	int p;
+	std::cout << "		-Expense 1 :			"; 
+	std::cin >> p ;
+	int q;
+	std::cout << "		-Expense 2 :			";
+	std::cin >> q;
+	int r;
+	std::cout << "		-Expense 3 :			";
+	std::cin >> r;
+	int s;
+	std::cout << "		-Expense 4 :			";
+	std::cin >> s;
+	int j=p+q+r+s ;
+	std::cout << "			-Total Espenses :	" << j << std::endl;
+	return j;
+}
+
+
+int main()
+{
+	std::cout << "This simple programe will help in making the financial statements in Accouncting ."<<std::endl;
+	std::cout << "Enter the name of the company : ";
+	std::string name;
+	std::getline(std::cin, name);
+	std::string y;
+	std::cout << "Enter month :";
+	std::cin >> y;
+	int w;
+	std::cout << "Enter the last day of the month :";
+	std::cin >> w;
+	int z;
+	std::cout << "Enter the year : ";
+	std::cin >> z;
+	std::cout << "-" << std::endl;
+	std::cout << "-" << std::endl;
+	std::cout << "						" << name << std::endl;
+	std::cout << "					Income Statement  " << std::endl;
+	std::cout << "				For the month ended ," << y << "," << w << "," << z << std::endl;
+	std::cout << "-" << std::endl;
+	std::cout << "-" << std::endl;
+	int k = ownerequityrevenues() - ownerequityexpenses();
+	std::cout << "	-Net Income/Loss :			" << k << "	(net income>0 , net loss <0)" << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "						" << name << std::endl;
+	std::cout << "					Owner's Equity Statement  " << std::endl;
+	std::cout << "				For the month ended ," << y << "," << w << "," << z << std::endl;
+	std::cout << "-" << std::endl;
+	std::cout << "-" << std::endl;
+	int v = ownerequityownercapital();
+	std::cout << "	-Net Income/Loss :									" << k << "(net income>0 , net loss <0)" << std::endl;
+	int l = v + k - ownerequityownerdrawings();
+	std::cout << "		-Owner's Capital at the End of the month :						" << l << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "						" << name << std::endl;
+	std::cout << "					Balance Sheet  " << std::endl;
+	std::cout << "					" << y << "," << w << "," << z << std::endl;
+	std::cout << "-" << std::endl;
+	std::cout << "-" << std::endl;
+	int m = assetscash() + assetsaccountsreceivable() + assetssupplies() + assetsequipment();
+	std::cout << "		-Total Assets :						" <<m<<std::endl;
+	std::cout << "					Liabilities and Owner's Equity  " << std::endl;
+	std::cout << "	Liabilities : " << std::endl;
+	int n = liabilitiesaccountspayable()+ liabilitiesnotepayable();
+	std::cout << "	-Owner's Equity : " << std::endl;
+	std::cout << "		-Owner's Capital :					" << l << std::endl;
+	std::cout << "			-Total Liabilities and Owner's Equity :			" <<n+l<< std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	std::cout << "." << std::endl;
+	int o;
+	std::cout << "Press 1 then enter to close program ... ";
+	std::cin >> o;
+    return 0;
+}
+
+
 
